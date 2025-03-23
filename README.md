@@ -1,32 +1,49 @@
 _Support this and all my katas via [Patreon](https://www.patreon.com/EmilyBache)_
 
-# Tennis Refactoring Kata
+# Tennis Refactoring Kata (Go Version)
 
-You can find out more about this exercise and where it comes from in [this YouTube video](https://youtu.be/XifUs1FhWRc). There are also some Guided Learning Hour videos that include demos of me solving parts of it.
+This is a Go-only implementation of Emily Bache's [Tennis Refactoring Kata](https://sammancoaching.org/kata_descriptions/tennis.html).
 
+You can learn more about this exercise in [this YouTube video](https://youtu.be/XifUs1FhWRc), where Emily explains its purpose and how to approach it. If you’re using this version, you are likely interested in writing clean, testable, and idiomatic Go code.
 
-# The Scenario
+---
 
-Imagine you work for a consultancy company, and one of your colleagues has been doing some work for the Tennis Society. The contract is for 10 hours billable work, and your colleague has spent 8.5 hours working on it. Unfortunately he has now fallen ill. He says he has completed the work, and the tests all pass. Your boss has asked you to take over from him. She wants you to spend an hour or so on the code so she can bill the client for the full 10 hours. She instructs you to tidy up the code a little and perhaps make some notes so you can give your colleague some feedback on his chosen design. You should also prepare to talk to your boss about the value of this refactoring work, over and above the extra billable hours.
+## 🏗️ The Scenario
 
-There are several versions of this refactoring kata, each with their own design smells and challenges. I suggest you start with the first one, with the class "TennisGame1". The test suite provided is fairly comprehensive, and fast to run. You should not need to change the tests, only run them often as you refactor.
+You’ve joined a consulting company. One of your colleagues has been working on a system for the Tennis Society. The contract includes 10 hours of billable work, and your colleague has already used 8.5 hours.
 
-There is a deliberate error in several of the implementations - the player names are hard-coded to "player1" and "player2". After you refactor, you may want to fix this problem and add suitable test cases to prove your fix works.
+Unfortunately, they’ve fallen ill. They claim the work is complete and that all tests pass. Your manager has asked you to take over and spend up to an hour tidying up the code so she can invoice the client for the full 10 hours.
 
-If you like this Kata, you may be interested in [my books](https://leanpub.com/u/emilybache) and website [SammanCoaching.org](https://sammancoaching.org)
+Your task:
+- Review and refactor the code (without changing the tests).
+- Make notes to provide feedback on your colleague's design.
+- Be prepared to explain the value of the refactoring you've done, beyond just fulfilling billable time.
 
-## Kata Description
+---
 
-Here is a description of the problem this code is designed to solve: [Tennis Kata](https://sammancoaching.org/kata_descriptions/tennis.html).
+## 💡 Refactoring Focus
 
-## Questions to discuss afterwards
+Start with the `TennisGame1` implementation. It has some design smells and hardcoded elements (like `"player1"` and `"player2"`) that should be addressed.
 
-* How did it feel to work with such fast, comprehensive tests?
-* Did you make mistakes while refactoring that were caught by the tests?
-* If you used a tool to record your test runs, review it. Could you have taken smaller steps? Made fewer refactoring mistakes?
-* Did you ever make any refactoring mistakes and then back out your changes? How did it feel to throw away code?
-* What would you say to your colleague if they had written this code?
-* What would you say to your boss about the value of this refactoring work? Was there more reason to do it over and above the extra billable hour or so?
+The provided test suite is fast and comprehensive. **You should not change the tests**, only run them frequently while you refactor.
 
-## Code Reading Practice
-Test your code reading skills. Here is a description of what to do: [Scanning for Code Smells](https://sammancoaching.org/exercises/code_reading.html). There are suitable lists of urls to open in some of the language subdirectories.
+---
+
+## ✅ Goals
+
+- Improve readability and maintainability
+- Apply Go idioms and good design practices
+- Use encapsulation where it makes sense (e.g. defining a `Player` struct)
+- Reduce duplication and complexity
+- Fix hardcoded values
+- Optionally: separate formatting logic from domain logic
+
+---
+
+## 🧪 Running the Tests
+
+Assuming you have Go installed:
+
+```bash
+go test ./...
+
