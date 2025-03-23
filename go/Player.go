@@ -1,26 +1,23 @@
 package tenniskata
 
 type Player struct {
-	Score int
 	Name  string
+	Score int
 }
+
+var scoreNames = []string{"Love", "Fifteen", "Thirty", "Forty"}
 
 func (p *Player) WonPoint() {
 	p.Score++
 }
 
-func (p *Player) GetScore() string {
-	score := ""
-	switch p.Score {
-	case 0:
-		score += "Love"
-	case 1:
-		score += "Fifteen"
-	case 2:
-		score += "Thirty"
-	case 3:
-		score += "Forty"
+func (p *Player) ScoreName() string {
+	if p.Score < len(scoreNames) {
+		return scoreNames[p.Score]
 	}
-	return score
+	return "Forty"
+}
 
+func (p *Player) RawScore() int {
+	return p.Score
 }
